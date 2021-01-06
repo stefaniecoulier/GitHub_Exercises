@@ -1,0 +1,19 @@
+UNF:
+DB(staffNo, dentistName, patientNo, patientName, appointment, surgeryNo)
+
+1NF:
+DB(staffNo, dentistName, patientNo, patientName, appDate, appTime, surgeryNo)
+DB(*staffNo*, dentistName, patientNo, patientName, *appDate*, *appTime*, surgeryNo)
+
+2NF:
+Dentist(*staffNo*, dentistName)
+DB(*staffNo*, patientNo, patientName, *appDate*, *appTime*, surgeryNo)
+
+3NF:
+patientName is only dependent on patientNo => transative dependency => violation on 3NF rules
+Dentist(*staffNo*, dentistName)
+Patient(*patientNo*, patientName)
+Appointment(*staffNo*, *appDate*, *appTime*, patientNo, surgeryNo)
+
+BCNF:
+= 3NF

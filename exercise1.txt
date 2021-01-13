@@ -1,3 +1,5 @@
+### EXERCISE 1
+
 mkdir GitHub_Exercises
 git init
 ls -a
@@ -9,3 +11,5 @@ git remote
 git add exercise1.txt
 git commit -m "Added exercise1.txt"
 git push -u origin master
+
+### END

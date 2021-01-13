@@ -1,3 +1,5 @@
+### EXERCISE 2
+
 UNF:
 DB(staffNo, dentistName, patientNo, patientName, appointment, surgeryNo)
 
@@ -17,3 +19,5 @@ Appointment(*staffNo*, *appDate*, *appTime*, patientNo, surgeryNo)
 
 BCNF:
 = 3NF
+
+### END

@@ -1,3 +1,4 @@
+### EXERCISE 6
 1. SELECT stdFirstName, stdLastName, stdCity, stdGPA FROM student WHERE stdGPA >= 3.7;
 
 2. SELECT FacFirstName, FacLastName, FacHireDate FROM faculty WHERE FacHireDate BETWEEN "199-01-01" and "2000-12-31";
@@ -28,4 +29,5 @@
 
 15. 
 
+### END
 

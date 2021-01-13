@@ -1,21 +1,31 @@
-1. 
+1. SELECT stdFirstName, stdLastName, stdCity, stdGPA FROM student WHERE stdGPA >= 3.7;
 
-2. 
+2. SELECT FacFirstName, FacLastName, FacHireDate FROM faculty WHERE FacHireDate BETWEEN "199-01-01" and "2000-12-31";
 
-3. 
+3. SELECT OfferNo, CourseNo, FacSSN, OffTerm, OffYear FROM offering WHERE (OffTerm = "FALL" and OffYear = "2005") or (OffTerm = "WINTER" and OffYear = "2006");
 
-4. 
+4. SELECT OfferNo, course.CourseNo, OffDays, OffTime FROM offering JOIN course ON course.CourseNo = offering.CourseNo WHERE (OffTerm = "SPRING" and OffYear = "2005") or (OffTerm = "WINTER" and OffYear = "2006");
 
-5. 
+5. SELECT OfferNo, offeringCourseNo, FacFirstName, FacLastName FROM offering JOIN faculty ON faculty.FacSNN = offering.FacSNN WHERE CourseNo like "IS%" and OffTerm = "FALL" and OffYear = "2005" and FacRank = "ASST";
 
-6. 
+6. SELECT stdMajor, avg(stdGPA) FROM student GROUP BY stdMajor;
 
-7. 
+7. SELECT OffYear, count(OfferNo), count (distinct CouseNo) FROM offering GROUP BY OffYear;
 
-8. 
+8. SELECT stdMajor, avg(stdGPA) FROM student WHERE stdClass = "JR" or stdClass = "SR" GROUP BY stdMajor HAVING avg(stdGPA) > 3.1;
 
-9. 
+9. SELECT min(stdGPA), max(stdGPA), stdMajor, stdClass FROM student GROUP BY stdMajor, stdClass;
 
-10. 
+10. SELECT crsDesc, count(*) FROM course JOIN offering ON offering.CourseNo = course.CourseNo WHERE CourseNo like "IS%" GROUP BY crsDesc;
 
-11. 
+11. SELECT stdGPA, stdFirstName, stdLastName, stdCity, stdState FROM student WHERE stdClass = "JR" ORDER BY stdGPA;
+
+12. 
+
+13. 
+
+14. 
+
+15. 
+
+

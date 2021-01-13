@@ -20,13 +20,15 @@ SELECT type, avg(price) FROM room GROUP BY type;
 
 2. SELECT * FROM booking JOIN hotel ON booking.hotelno = hotel.hotelno JOIN guest ON booking.guestno = guest.guestno WHERE hotel.hotelname = "The Tower Hotel" AND curdate BETWEEN datefrom and dateto;
 
-3. SELECT 
+3. select * from hotel join booking on hotel.hotelno = booking.hotelno join guest on guest.guestno=booking.guestno join room on room.roomno =booking.roomno and room.hotelno = booking.hotelno where DATE(NOW()) between datefrom  and dateto and hotelname = "The Tower Hotel";
+OR
+select * from (select booking.hotelno, hotel.hotelname , city, guest.guestno, datefrom ,dateto,roomno, guestname, guestaddress from hotel join booking on hotel.hotelno = booking.hotelno join guest on guest.guestno=booking.guestno where DATE(NOW()) between datefrom  and dateto and hotelname = "The Tower Hotel") as sel1 right join room on room.roomno=sel1.roomno and room.hotelno=sel1.hotelno where room.hotelno='fb01'; 
 
-4. SELECT hotel.hotelname, sum(room.price) FROM booking JOIN hotel ON booking.hotelno = hotel.hotelno JOIN room ON booking.roomno = room.roomno WHERE hotel.hotelname = "The Tower Hotel";
+4. select sum(price) from hotel join booking on hotel.hotelno = booking.hotelno join guest on guest.guestno=booking.guestno join room on room.roomno =booking.roomno and room.hotelno = booking.hotelno where DATE(NOW()) between datefrom  and dateto and hotelname = "The Tower Hotel";
 
-5. SELECT 
+5. select * from room join hotel on hotel.hotelno=room.hotelno  where  roomno not in(select room.roomno from hotel join booking on hotel.hotelno = booking.hotelno join guest on guest.guestno=booking.guestno join room on room.roomno =booking.roomno and room.hotelno = booking.hotelno where DATE(NOW()) between datefrom  and dateto and hotelname = "The Tower Hotel") and hotelname = "The Tower Hotel";
 
-6. SELECT
+6. select sum(price) from room join hotel on hotel.hotelno=room.hotelno  where  roomno not in(select room.roomno from hotel join booking on hotel.hotelno = booking.hotelno join guest on guest.guestno=booking.guestno join room on room.roomno =booking.roomno and room.hotelno = booking.hotelno where DATE(NOW()) between datefrom  and dateto and hotelname = "The Tower Hotel") and hotelname = "The Tower Hotel";
 
 7. SELECT hotelname, count(*) FROM hotel JOIN room on room.hotelno = hotel.hotelno WHERE city = "London" GROUP BY hotelname;
 
